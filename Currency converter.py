@@ -7,7 +7,7 @@ def convert_currency(amount, from_curr, to_curr):
         "EUR": 0.92,
         "JPY": 150.0
     }
-    
+
     usd_amount = amount / rates[from_curr]
     result = usd_amount * rates[to_curr]
 
@@ -17,19 +17,19 @@ def convert_currency(amount, from_curr, to_curr):
 def main():
     print("===== Currency Converter =====")
     print("Available currencies: USD, INR, GBP, EUR, JPY")
-
+    print("==RATES== \nUSD: 1 \nINR: 83.0 \nGBP: 0.79 \nEUR: 0.92 \nJPY: 150.0")
     amount = float(input("Enter amount: "))
     from_curr = input("From currency: ").upper()
     to_curr = input("To currency: ").upper()
 
     if from_curr not in ["USD", "INR", "GBP", "EUR", "JPY"] or \
        to_curr not in ["USD", "INR", "GBP", "EUR", "JPY"]:
-        print("❌ Invalid currency!")
+        print("Invalid currency!")
         return
 
     result = convert_currency(amount, from_curr, to_curr)
 
-    print(f"\n💱 {amount} {from_curr} = {round(result, 2)} {to_curr}")
+    print(f"\n {amount} {from_curr} = {round(result, 2)} {to_curr}")
 
 
 main()
